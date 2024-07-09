@@ -1,0 +1,168 @@
+html {
+    font-size: 10px;
+    background-color: rgb(44, 44, 44);
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  
+  .keys {
+    display: flex;
+    flex: 1;
+    min-height: 20vh;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .key {
+    border: .4rem solid red;
+    border-radius: .5rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem .5rem;
+    transition: all .07s ease;
+    width: 10rem;
+    text-align: center;
+    color: white;
+   
+    text-shadow: 0 0 .5rem black;
+  }
+  
+  .playing {
+    transform: scale(1.1);
+    border-color: white;
+    box-shadow: 0 0 10rem yellow;
+  }
+  
+  kbd {
+    display: block;
+    font-size: 4rem;
+  }
+  
+  .sound {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: orange;
+  }
+
+#container{
+  display: inline;
+}
+#container2{
+  border: .4rem solid red;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: black;
+}
+.sequencer {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    min-height: 10vh;
+    font-size: 4rem;
+    align-items: center;
+    justify-content: center;
+
+    
+  }
+  .transport {
+    display: flex;
+    flex: 10;
+    min-height: 10vh;
+    color: white;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: left;
+  }
+  .beat {
+    border: .4rem solid red;
+    border-radius: .5rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem .5rem;
+    transition: all .07s ease;
+    width: 3rem;
+    text-align: center;
+    color: white;
+    background-color: black;
+    text-shadow: 0 0 .5rem black;
+  }
+  .note-on{
+    transform: scale(1.1);
+    background-color: yellow; 
+    border-color: red;
+    box-shadow: 0 0 10rem black;
+  }
+  .button{
+    border: .4rem solid orange;
+    border-radius: .5rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding:  .5rem;
+    transition: all .07s ease;
+    width: 5rem;
+    text-align: center;
+    color: black;
+    background-color: white;
+    
+  }
+  
+  .beatlight {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    align-items: center;
+    margin-left: 42.5%;
+ 
+  }
+  .flam{
+    background-color: orange;
+  }
+#play-btn:disabled{
+      background-color: #d3d3d3;
+      color: #a9a9a9;
+      cursor: none;
+  }
+#my-h1{
+  font-family: monospace bold;
+  color: white;
+  -moz-text-fill-color: white;
+  -webkit-text-fill-color: white;
+  -moz-text-stroke-color: black;
+  -webkit-text-stroke-color: black;
+  -moz-text-stroke-width: 2px;  
+  -webkit-text-stroke-width: 2px;
+  font-size: 4rem;
+
+  text-align: center;
+  font-family: monospace bold;
+  text-decoration: double;
+  font-size: 4rem;
+  letter-spacing: 2rem;
+
+}
+#my-p1{
+  color: white;
+  font-size: 3rem;
+  font-stretch: ultra-expanded;
+  -moz-text-fill-color: white;
+  -webkit-text-fill-color: white;
+  -moz-text-stroke-color: black;
+  -webkit-text-stroke-color: black;
+  -moz-text-stroke-width: 1px;  
+  -webkit-text-stroke-width: 1px;
+}
+.beat-cell{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  justify-content: center;
+  align-items: center;
+
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>JS9 Drum Machine</title>
+</head>
+<body>
+
+  <h1 id="my-h1">JS-9 drumMachine</h1>
+
+<br>
+<br>
+<br>
+<div id="container2">
+        <div class="keys" id="clap">
+          <div data-key="65" class="key" id="clap">
+            <kbd>A</kbd>
+            <span class="sound">clap</span>
+          </div>
+          <div data-key="83" class="key" id="hihat">
+            <kbd>S</kbd>
+            <span class="sound">hihat</span>
+          </div>
+          <div data-key="68" class="key" id="kick">
+            <kbd>D</kbd>
+            <span class="sound">kick</span>
+          </div>
+          <div data-key="70" class="key" id="openhat">
+            <kbd>F</kbd>
+            <span class="sound">openhat</span>
+          </div>
+          <div data-key="71" class="key" id="boom">
+            <kbd>G</kbd>
+            <span class="sound">boom</span>
+          </div>
+          <div data-key="72" class="key" id="ride">
+            <kbd>H</kbd>
+            <span class="sound">ride</span>
+          </div>
+          <div data-key="74" class="key" id="snare">
+            <kbd>J</kbd>
+            <span class="sound">snare</span>
+          </div>
+          <div data-key="75" class="key" id="tom">
+            <kbd>K</kbd>
+            <span class="sound">tom</span>
+          </div>
+          <div data-key="76" class="key" id="tink">
+            <kbd>L</kbd>
+            <span class="sound">tink</span>
+          </div>
+        </div>
+      <div id="container">        
+        <div id='sequencer' class="sequencer">
+          <div class='beat-cell'>
+            <div class="beat">1</div>
+            <div class="beatlight"></div>
+          </div>
+          <div class='beat-cell'>
+            <div class="beat">2</div>
+            <div class="beatlight"></div>
+          </div>
+          <div class='beat-cell'>
+            <div class="beat">3</div>
+            <div class="beatlight"></div>
+          </div>
+          <div class='beat-cell'>
+            <div class="beat">4</div>
+            <div class="beatlight"></div>
+          </div>
+          <div class='beat-cell'>
+            <div class="beat">5</div>
+            <div class="beatlight"></div>
+          </div>
+          <div class='beat-cell'>
+            <div class="beat">6</div>
+            <div class="beatlight"></div>
+          </div>
+          <div class='beat-cell'>
+            <div class="beat">7</div>
+            <div class="beatlight"></div>
+          </div>
+          <div class='beat-cell'>
+            <div class="beat">8</div>
+            <div class="beatlight"></div>
+          </div>
+          <div class='beat-cell'>
+            <div class="beat">9</div>
+            <div class="beatlight"></div>
+          </div>
+          <div class='beat-cell'>
+            <div class="beat">10</div>
+            <div class="beatlight"></div>
+          </div>
+          <div class='beat-cell'>
+            <div class="beat">11</div>
+            <div class="beatlight"></div>
+          </div>
+          <div class='beat-cell'>
+            <div class="beat">12</div>
+            <div class="beatlight"></div>
+          </div>
+          <div class='beat-cell'>
+            <div class="beat">13</div>
+            <div class="beatlight"></div>
+          </div>
+          <div class='beat-cell'>
+            <div class="beat">14</div>
+            <div class="beatlight"></div>
+          </div>
+          <div class='beat-cell'>
+            <div class="beat">15</div>
+            <div class="beatlight"></div>
+          </div>
+          <div class='beat-cell'>
+            <div class="beat">16</div>
+            <div class="beatlight"></div>
+          </div>
+        </div>
+        <div class="transport">
+          <button onclick='playBeat()' id='play-btn' class="button play">play</button>
+          <button onclick='stopBeat()' class="button stop">stop</button>
+          
+          <button onclick='clearBeat()' class="button clear-beat">clear</button>
+         
+          <input type="number" id='bpm' class="button" placeholder="120">BPM</input>
+          <input type="number" id='step-length' class="button" min="0" max="32" step="1" placeholder="16">Steps</input>
+          <input type="range" id="flam-span" class="button" min="0" max="200" step="1" placeholder="40">Flam amount</input>
+      </div>
+        </div>
+        </div>
+     
+        
+        <audio data-key="65" src="sounds/clap.wav"></audio>
+        <audio data-key="83" src="sounds/hihat.wav"></audio>
+        <audio data-key="68" src="sounds/kick.wav"></audio>
+        <audio data-key="70" src="sounds/openhat.wav"></audio>
+        <audio data-key="71" src="sounds/boom.wav"></audio>
+        <audio data-key="72" src="sounds/ride.wav"></audio>
+        <audio data-key="74" src="sounds/snare.wav"></audio>
+        <audio data-key="75" src="sounds/tom.wav"></audio>
+        <audio data-key="76" src="sounds/tink.wav"></audio>
+      <br>
+      <br>
+      <br>
+        <ul id="my-p1"><li>Play the drums with the corresponding keys on the keyboard</li>
+        <li>Select a drum with the mouse, then fill in the sequence for that drum</li>
+    <li>Turn on flam by clicking the beat indicators(the red dots under the beats)</li>
+        </ul>
+      <script src="drumMachine2.js"></script>
+</body>
+</html>
