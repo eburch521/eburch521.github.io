@@ -132,31 +132,19 @@ html {
 #my-h1{
   font-family: monospace bold;
   color: white;
-  -moz-text-fill-color: white;
-  -webkit-text-fill-color: white;
-  -moz-text-stroke-color: black;
-  -webkit-text-stroke-color: black;
-  -moz-text-stroke-width: 2px;  
-  -webkit-text-stroke-width: 2px;
   font-size: 4rem;
-
   text-align: center;
   font-family: monospace bold;
   text-decoration: double;
   font-size: 4rem;
-  letter-spacing: 2rem;
+  letter-spacing: 4rem;
 
 }
 #my-p1{
   color: white;
-  font-size: 3rem;
+  font-size: 2rem;
   font-stretch: ultra-expanded;
-  -moz-text-fill-color: white;
-  -webkit-text-fill-color: white;
-  -moz-text-stroke-color: black;
-  -webkit-text-stroke-color: black;
-  -moz-text-stroke-width: 1px;  
-  -webkit-text-stroke-width: 1px;
+
 }
 .beat-cell{
   display: grid;
