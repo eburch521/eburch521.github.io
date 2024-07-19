@@ -133,13 +133,15 @@ html {
   }
 #my-h1{
   display: inline-block;
-  
+  text-align: center;
   font-family: monospace bold;
-  
   color: white;
   padding: 2rem;
-  filter:  drop-shadow(-.3rem .3rem yellow) drop-shadow(-.3rem .3rem orange) drop-shadow(-.3rem .3rem red); 
+  filter: drop-shadow(-.3rem .3rem yellow) drop-shadow(-.3rem .3rem orange) drop-shadow(-.3rem .3rem red); 
   font-size: 10rem;
+
+  font-size: 4rem;
+
   text-align: center;
   
 
@@ -150,7 +152,7 @@ html {
 #my-p1{
   color: white;
   font-size: 2rem;
-  
+  font-stretch: ultra-expanded;
 }
 .beat-cell{
   display: grid;
