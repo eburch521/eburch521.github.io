@@ -1,5 +1,5 @@
 html {
-    font-size: 10px;
+  font-size: 10px;
     background-color: rgb(44, 44, 44);
   }
   
@@ -25,7 +25,7 @@ html {
     font-size: 1.5rem;
     padding: 1rem .5rem;
     transition: all .07s ease;
-    width: 10rem;
+    width: 8rem;
     text-align: center;
     color: white;
    
@@ -54,6 +54,8 @@ html {
   display: inline;
 }
 #container2{
+  
+  display: inline-block;
   border: .4rem solid red;
   border-radius: 1rem;
   margin: 1rem;
@@ -130,33 +132,25 @@ html {
       cursor: none;
   }
 #my-h1{
+  display: inline-block;
+  
   font-family: monospace bold;
+  
   color: white;
-  -moz-text-fill-color: white;
-  -webkit-text-fill-color: white;
-  -moz-text-stroke-color: black;
-  -webkit-text-stroke-color: black;
-  -moz-text-stroke-width: 2px;  
-  -webkit-text-stroke-width: 2px;
-  font-size: 4rem;
-
+  padding: 2rem;
+  filter:  drop-shadow(-.3rem .3rem yellow) drop-shadow(-.3rem .3rem orange) drop-shadow(-.3rem .3rem red); 
+  font-size: 10rem;
   text-align: center;
-  font-family: monospace bold;
-  text-decoration: double;
+  
+
   font-size: 4rem;
-  letter-spacing: 2rem;
+  letter-spacing: 4rem;
 
 }
 #my-p1{
   color: white;
-  font-size: 3rem;
-  font-stretch: ultra-expanded;
-  -moz-text-fill-color: white;
-  -webkit-text-fill-color: white;
-  -moz-text-stroke-color: black;
-  -webkit-text-stroke-color: black;
-  -moz-text-stroke-width: 1px;  
-  -webkit-text-stroke-width: 1px;
+  font-size: 2rem;
+  
 }
 .beat-cell{
   display: grid;

@@ -68,17 +68,17 @@ beatCell.classList.add('beat-cell');
 beat.classList.add('beat');
 beatLight.classList.add('beatlight');
 
-console.log(beatCell);
-
-
-
-
     
 keys.forEach(key => key.addEventListener('click', selectDrum));
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 window.addEventListener('keydown', typeSound);
 beats.forEach(beat => beat.addEventListener('click', beatSwitch));
 beatLights.forEach(beatLight => beatLight.addEventListener('click', flam));
+flamInput.addEventListener('input', function(){
+    flamLength = flamInput.value;
+    playBeat();
+})
+
 window.addEventListener('keypress', event => {
     if(event.code === 'Space'){
     
