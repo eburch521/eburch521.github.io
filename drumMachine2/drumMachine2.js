@@ -16,6 +16,8 @@ const stepLengthInput = document.getElementById('step-length');
 
 const playBtn = document.getElementById('play-btn');
 
+//const stopBtn = document.getElementById('stop-btn');
+
 let keys = Array.from(document.querySelectorAll('.key')); 
 
 let beats = Array.from(document.querySelectorAll('.beat'));
@@ -55,7 +57,7 @@ let snareSeqFlam =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 let tomSeqFlam =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 let tinkSeqFlam =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
-let flamSeq = [clapSeqFlam, hihatSeqFlam,kickSeqFlam, openhatSeqFlam, boomSeqFlam, rideSeqFlam, snareSeqFlam, tomSeqFlam, tinkSeqFlam];
+let flamSeq = [clapSeqFlam, hihatSeqFlam, kickSeqFlam, openhatSeqFlam, boomSeqFlam, rideSeqFlam, snareSeqFlam, tomSeqFlam, tinkSeqFlam];
 
 let drumSeq = [clapSeq, hihatSeq, kickSeq, openhatSeq, boomSeq, rideSeq, snareSeq, tomSeq, tinkSeq];
 const drumKit = [clap, hihat, kick, openhat, boom, ride, snare, tom, tink];
@@ -76,14 +78,41 @@ beats.forEach(beat => beat.addEventListener('click', beatSwitch));
 beatLights.forEach(beatLight => beatLight.addEventListener('click', flam));
 flamInput.addEventListener('input', function(){
     flamLength = flamInput.value;
-    playBeat();
-})
-
-window.addEventListener('keypress', event => {
-    if(event.code === 'Space'){
+});
+//enter-key event listener
+window.addEventListener('keydown', function(event) {
+        if(event.key == "Enter"){
+            if(bpmInput.value){
+                bpm = bpmInput.value;
+            }
+            else{bpm = 120};
+            if(stepLengthInput.value){
+                stepLength = stepLengthInput.value;
+            }
+            else{stepLength = 16};
+            console.log(stepLength);
+            console.log(bpm)
+            changeStepLength(stepLength);
+         }
+        if(!interval){
+                playBeat();
+            }
+        }
     
-    if(beatPlaying) {stopBeat()}
-    else{playBeat()}
+    );
+
+//space-bar event listener
+window.addEventListener('keydown', event => {
+    if(event.code === 'Space'){
+        
+        
+        if(!beatPlaying) {
+            playBeat();
+        }
+        else{
+            pauseBeat();
+        }
+        
     }
     });
 
@@ -167,26 +196,6 @@ function beatSwitch() {
 
     
 }
-window.addEventListener('keydown', function(event) {
-        if(event.key == "Enter"){
-            if(bpmInput.value){
-                bpm = bpmInput.value;
-            }
-            else{bpm = 120};
-            if(stepLengthInput.value){
-                stepLength = stepLengthInput.value;
-            }
-            else{stepLength = 16};
-            console.log(stepLength);
-            console.log(bpm)
-            changeStepLength(stepLength);
-         }
-        if(!interval){
-                playBeat();
-            }
-        }
-    
-    );
 
 function changeStepLength(stepLength) {
     console.log(stepLength);
@@ -257,15 +266,13 @@ function changeStepLength(stepLength) {
 
 
 function playBeat() {
-   flamLength = flamInput.value;
+    clearInterval(interval);
     
     if (!beatPlaying) {
         beatPlaying = true;
         playBtn.disabled = true;
     }
-    if (interval) {
-        clearInterval(interval);
-    }
+
 
     interval = setInterval(() => {
             beatLights.forEach(beatLight => {
@@ -289,41 +296,56 @@ function playBeat() {
         }, (60/bpm)*250); // Adjust tempo here
     
 }
+function pauseBeat() {
+    clearInterval(interval);
+
+    beatPlaying = false;
+    playBtn.disabled = false;
+}
 
 
 function stopBeat() {
-    console.log(beatPlaying);
-    currentStep = 0;
     clearInterval(interval);
-    if (beatPlaying) {
-        beatPlaying = false;
-        playBtn.disabled = false;
-        console.log('Stopped.');
-    }
-
-
+    
+    currentStep = 0;
+    beatLights.forEach(beatLight => {beatLight.style.backgroundColor = 'red'});
+    beatLights[currentStep].style.backgroundColor = 'yellow';    
+    
+    beatPlaying = false;
+    playBtn.disabled = false;
 }
+    
 
 function clearBeat() {
     
-    beats.forEach(beat => {beat.classList.remove('note-on')})
-    
-    
-    clapSeq =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-    hihatSeq =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-    kickSeq =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-    openhatSeq =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-    boomSeq =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-    snareSeq =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-    tomSeq =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-    tinkSeq =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    beats.forEach(beat => {beat.classList.remove('note-on')});
+    beatLights.forEach(beatLight => {beatLight.classList.remove('flam')});
+
+    clapSeq = Array.from({ length: stepLength }, () => 0);
+    hihatSeq =Array.from({ length: stepLength }, () => 0);
+    kickSeq =Array.from({ length: stepLength }, () => 0);
+    openhatSeq =Array.from({ length: stepLength }, () => 0);
+    boomSeq =Array.from({ length: stepLength }, () => 0);
+    snareSeq =Array.from({ length: stepLength }, () => 0);
+    tomSeq =Array.from({ length: stepLength }, () => 0);
+    tinkSeq =Array.from({ length: stepLength }, () => 0);
 
     drumSeq = [clapSeq, hihatSeq, kickSeq, openhatSeq, boomSeq, snareSeq, tomSeq, tinkSeq];
+    
+    clapSeqFlam = Array.from({ length: stepLength }, () => 0);
+    hihatSeqFlam =Array.from({ length: stepLength }, () => 0);
+    kickSeqFlam =Array.from({ length: stepLength }, () => 0);
+    openhatSeqFlam =Array.from({ length: stepLength }, () => 0);
+    boomSeqFlam =Array.from({ length: stepLength }, () => 0);
+    snareSeqFlam =Array.from({ length: stepLength }, () => 0);
+    tomSeqFlam =Array.from({ length: stepLength }, () => 0);
+    tinkSeqFlam =Array.from({ length: stepLength }, () => 0);
 
-
+    flamSeq = [clapSeqFlam, hihatSeqFlam,kickSeqFlam, openhatSeqFlam, boomSeqFlam, rideSeqFlam, snareSeqFlam, tomSeqFlam, tinkSeqFlam];
 
 }
 
+/*
 function beatStep() {
     beatLights.forEach(beatLight => beatLight.style.backgroundColor = 'red');
     beatLights[currentStep].style.backgroundColor = 'yellow';  
@@ -335,4 +357,4 @@ function beatStep() {
             }
         });
     }
-
+*/

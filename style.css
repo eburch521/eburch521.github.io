@@ -1,0 +1,53 @@
+body{
+    background-color: rgb(98, 255, 98);
+    margin: 0;
+    padding: 0;
+    font-family: Cascadia Code;
+    background-color: rgb(44, 44, 44);
+}
+.container{
+    display: block;
+    border: .4rem solid red;
+    border-radius: 1rem;
+    margin: 4rem;
+    padding: 1rem;
+    box-shadow: -20px 20px  rgb(22, 22, 22);
+    padding-bottom: 4rem;
+
+    background-color: black;
+}
+h1{
+    text-align: center;
+    
+    color: white;
+    padding: 2rem;
+    filter: drop-shadow(-.15rem .15rem yellow) drop-shadow(-.15rem .15rem orange) drop-shadow(-.15rem .15rem red); 
+    font-size: 10rem;
+
+    font-size: 2rem;
+
+    text-align: center;
+    letter-spacing: 2rem;
+}
+.links{
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+a:link {
+    color: red;
+    align-items: center;
+
+  }
+  
+  a:visited {
+    color: green;
+  }
+  
+  a:hover {
+    color: hotpink;
+  }
+  
+  a:active {
+    color: blue;
+  }

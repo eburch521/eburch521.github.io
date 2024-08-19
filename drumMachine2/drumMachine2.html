@@ -121,13 +121,15 @@
         </div>
         <div class="transport">
           <button onclick='playBeat()' id='play-btn' class="button play">play</button>
-          <button onclick='stopBeat()' class="button stop">stop</button>
+          <button onclick='stopBeat()' id='stop-btn' class="button stop">stop</button>
           
           <button onclick='clearBeat()' class="button clear-beat">clear</button>
-         
-          <input type="number" id='bpm' class="button" placeholder="120">BPM</input>
-          <input type="number" id='step-length' class="button" min="0" max="32" step="1" placeholder="16">Steps</input>
-          <input type="range" id="flam-span" class="button" min="0" max="100" step="1" placeholder="40">Flam amount</input>
+          <label>BPM</label>
+          <input type="number" id='bpm' class="button control" placeholder="120"></input>
+          <label>Steps</label>
+          <input type="number" id='step-length' class="button control" min="0" max="32" step="1" placeholder="16"></input>
+          <label>Flam</label>
+          <input type="range" id="flam-span" class="button control" min="0" max="100" step="1" placeholder="40"></input>
       </div>
         </div>
         </div>
@@ -145,10 +147,13 @@
       <br>
       <br>
       <br>
-        <ul id="my-p1"><li>Play the drums with the corresponding keys on the keyboard</li>
-        <li>Select a drum with the mouse, then fill in the sequence for that drum</li>
-    <li>Turn on flam by clicking the beat indicators(the red dots under the beats)</li>
+        <ul id="my-p1">
+          <li>Play the drums with the corresponding keys on the keyboard</li>
+          <li>Select a drum with the mouse, then fill in the sequence for that drum</li>
+          <li>Turn on flam by clicking the beat indicators(the red dots under the beats)</li>
         </ul>
+        <p id="my-p1">samples from <a href="https://legowelt.org/">Legowelt.org</a></p>
+
       <script src="drumMachine2.js"></script>
 </body>
 </html>
