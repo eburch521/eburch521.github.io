@@ -7,61 +7,28 @@
     <title>Document</title>
 </head>
 <body>
+<div id="header" class="outer"><div class="container"><div id="title">Welcome</div></div></div>
+<div id="container2">
+    <div id="sidebar" class="outer">
+    <div id="projects" class="container">
+        <h1>Projects</h1>
+            <a class="links project-links" href="drumMachine2/drumMachine2.html">JS-9 drumMachine</a><br>
+            <a class="links project-links" href="spotify/index.html">BandFinder</a><br>
+            <a class="links project-links" href="forms/index.html">Kimchi Calculator</a><br>
+            
+    </div>
     
-    <h1 id="header">Kimchi Calculator</h1>
-    <div id="main-container">
-        <div id="input-table">
-            <div id="header2">
-                <label for="cabbage">Enter the amount of cabbage (in grams):</label>
-                <input type="number" id="cabbage-amount" class="amounts" placeholder="Enter amount" min="0" step="0.1">
-                
-                <label for="total">Total Mix (in grams):</label>
-                <input type="number" id="total-mix" class="amounts" placeholder="Enter amount" min="0" step="0.1">
-            </div>
-            <br>
-            <div id="ingredients">
-                <label for="carrots">Carrots:</label>
-                <input type="number" id="carrot-amount" class="amounts" placeholder="amount" min="0" step="0.1">
-                <label for="ginger">Ginger:</label>
-                <input type="number" id="ginger-amount" class="amounts" placeholder="amount" min="0" step="0.1">
-                
-                <label for="redOnion">Red Onions:</label>
-                <input type="number" id="onion-amount" class="amounts" placeholder="amount" min="0" step="0.1">
-                <label for="salt">Salt:</label>
-                <input type="number" id="salt-amount" class="amounts" placeholder="amount" min="0" step="0.1">
-                
-                <label for="sugar">Sugar:</label>
-                <input type="number" id="sugar-amount" class="amounts" placeholder="amount" min="0" step="0.1">
-                <label for="tamari">Tamari:</label>
-                <input type="number" id="tamari-amount" class="amounts" placeholder="amount" min="0" step="0.1">
-                
-                <label for="garlic">Carrots:</label>
-                <input type="number" id="garlic-amount" class="amounts" placeholder="amount" min="0" step="0.1">
-                <label for="pepperflakes">Pepper Flakes:</label>
-                <input type="number" id="pepper-amount" class="amounts" placeholder="amount" min="0" step="0.1">
-            </div>
-        </div>
-        <div id="instructions">
-            <ol>
-                <li>Enter the amount of cabbage in grams.</li>
-                <li>The calculator will automatically compute the required amounts of other ingredients.</li>
-                <li>Press Enter or click "Submit" to save the results to the table below.</li>
-                <li>Click "Export Results" to download the table as a CSV file.</li>
-                <li>Click "Reset" to clear all inputs and the results table.</li>
-            </ol>
-        </div>
+    <div id="music" class="container">
+        <h1>Music</h1>
+            <a class="links music-links" href="https://eburch.bandcamp.com">Bandcamp</a>
     </div>
-    <br>
-    <!-- Add Submit and Reset buttons -->
-    <div id="buttons">
-        <button type="button" id="submit-btn">Submit</button>
-        <button type="reset" id="reset-btn">Reset</button>
-        <button type="button" id="export-btn">Export Results</button>
+    <div id="news" class="container">
+        <h1>News</h1>
+            <a class="links news-links" href="https://eburch.bandcamp.com">News</a>
     </div>
-    <div id="result-container">
-        <h2>Results:</h2>
-        <div id="result1"></div>
-    </div>
-    <script src="script.js"></script>
+</div>
+<div id="viewbox" class="outer"></div>
+</div>
+<script src="index.js"></script>
 </body>
 </html>
