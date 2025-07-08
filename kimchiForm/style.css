@@ -1,0 +1,159 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1 {
+  text-align: left;
+  color: #444;
+}
+
+
+#result-container {
+  max-width: 800px;
+ 
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#result-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#result-table th, #result-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#result-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+#header2{
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px;
+    gap: 10px;
+}
+
+#ingredients {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px;
+    gap: 10px; 
+}
+
+#instructions {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #e9f7ef;
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+  color: #000000;
+  font-size: 12px;
+  line-height: 1.5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#instructions ol {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+#instructions li {
+  margin-bottom: 5px;
+}
+
+#main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items at the top */
+  max-width: 1200px;
+  gap: 10px;
+  margin: auto;
+}
+
+#input-table {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #e9f7ef;
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#instructions {
+  flex: 1;
+  align-self: flex-start; /* Align instructions to the top */
+}
+
+#buttons {
+  display: flex;
+  justify-content: flex-start; /* Align buttons to the left */
+  align-items: center; /* Vertically align buttons */
+  gap: 10px; /* Add spacing between buttons */
+  margin: 20px 0;
+  padding-left: 20px; /* Add some padding to align with other content */
+}
+
+#buttons button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#buttons button:hover {
+  background-color: #0056b3;
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  body {
+    margin: 10px;
+  }
+
+  form {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 15px;
+  }
+
+  #header2, #ingredients {
+    grid-template-columns: 1fr 1fr; /* Adjust to two columns */
+    gap: 15px;
+  }
+
+  #result-container {
+    max-width: 95%;
+    margin: 10px auto;
+    padding: 15px;
+  }
+
+  #result-table th, #result-table td {
+    font-size: 14px; /* Adjust font size for better readability */
+    padding: 6px;
+  }
+  form input[type="text"], form input[type="number"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  form button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}

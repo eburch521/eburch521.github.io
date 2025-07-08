@@ -6,7 +6,7 @@ html {
   body {
     margin: 0;
     padding: 0;
-    font-family: Cascadia Code;
+    font-family: sans-serif;
   }
   
   
@@ -105,10 +105,9 @@ html {
     border-radius: .5rem;
     margin: 1rem;
     font-size: 1.5rem;
-    font-family: Cascadia Code;
     padding:  .5rem;
     transition: all .07s ease;
-    width: 6rem;
+    width: 5rem;
     text-align: center;
     color: black;
     background-color: white;
@@ -133,12 +132,19 @@ html {
       cursor: none;
   }
 #my-h1{
+  display: inline-block;
   text-align: center;
-  font-family: Cascadia Code;
+  font-family: monospace bold;
   color: white;
   padding: 2rem;
   filter: drop-shadow(-.3rem .3rem yellow) drop-shadow(-.3rem .3rem orange) drop-shadow(-.3rem .3rem red); 
   font-size: 10rem;
+
+  font-size: 4rem;
+
+  text-align: center;
+  
+
   font-size: 4rem;
   letter-spacing: 4rem;
 
@@ -156,20 +162,3 @@ html {
   align-items: center;
 
 }
-
-a:link {
-  color: red;
-}
-
-a:visited {
-  color: green;
-}
-
-a:hover {
-  color: hotpink;
-}
-
-a:active {
-  color: blue;
-}
-
