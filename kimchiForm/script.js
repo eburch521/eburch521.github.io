@@ -50,6 +50,9 @@ function resetForm() {
   totalMix.value = '';
 }
 function clearResults() {
+  if (!window.confirm('Are you sure you want to clear all results? This cannot be undone.')) {
+    return;
+  }
   // Clear the result table
   const resultTable = document.getElementById('result-table');
   if (resultTable) {
