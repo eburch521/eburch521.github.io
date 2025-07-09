@@ -31,7 +31,7 @@ try {
 
 		//display monthly listeners
 		const monthlyListeners = document.createElement('div');
-		monthlyListeners.innerText = `Followers: ${data.monthlyListeners}`;
+		monthlyListeners.innerText = `Monthly Listeners: ${data.monthlyListeners}`;
 		dataDisplay.appendChild(monthlyListeners);
 		
 		//create list of top 5 cities
