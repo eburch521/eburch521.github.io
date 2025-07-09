@@ -104,7 +104,7 @@ function flam() {
 function selectDrum() {
     
     selectedDrum = this.id;
-    seqIndex = keys.findIndex((key)=> key.id == `${this.id}`);
+    seqIndex = keys.findIndex((key)=> key.id == this.id);
     for(j = 0; j<stepLength; j++){
     
             if(flamSeq[seqIndex][j] != 0){
