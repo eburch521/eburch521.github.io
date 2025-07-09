@@ -21,35 +21,42 @@ try {
 		
 		// display artist name
 		const artist = document.createElement('div');
+		artist.classList.add('toppers');
 		artist.innerText = `Artist: ${data.name}`;
 		dataDisplay.appendChild(artist);
 
 		//display followers
 		const followers = document.createElement('div');
+		followers.classList.add('toppers');
 		followers.innerText = `Followers: ${data.followers}`;
 		dataDisplay.appendChild(followers);
 
 		//display monthly listeners
 		const monthlyListeners = document.createElement('div');
+		monthlyListeners.classList.add('toppers');
 		monthlyListeners.innerText = `Monthly Listeners: ${data.monthlyListeners}`;
 		dataDisplay.appendChild(monthlyListeners);
 		
 		//create list of top 5 cities
 		const topCities = document.createElement('div');
+		topCities.classList.add('toppers');
 		topCities.innerText = 'Top Cities: ';
 		dataDisplay.appendChild(topCities);
 		data.topCities.forEach(city => {
 			let li = document.createElement('li');
+			li.classList.add('list-item');
 			li.innerText = `${city.city}, ${city.country} - ${city.numberOfListeners} listeners`;
 			dataDisplay.appendChild(li);
 		});
 
 		//create list of top tracks
 		const topTracks = document.createElement('div');
+		topTracks.classList.add('toppers');
 		topTracks.innerText = 'Top Tracks: ';
 		dataDisplay.appendChild(topTracks);
 		data.topTracks.forEach(track => {
 			let li = document.createElement('li');
+			li.classList.add('list-item');
 			li.innerText = `${track.name} - ${track.streamCount} streams`;
 			dataDisplay.appendChild(li);
 		});
