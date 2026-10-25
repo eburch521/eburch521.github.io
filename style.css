@@ -1,80 +1,221 @@
 body {
-    font-family: Helvetica, sans-serif;
-    margin: 20px;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    margin: 0;
+    margin-top: 75px;
+    background-image: url('./images/trees4.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Cascadia Code', Courier, monospace;
+
+
 }
 
-h1 {
-    text-align: center;
-    color: #444;
-}
-
-#sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: static; /* Remove fixed positioning for centering */
-    width: auto;
+.navbar {
+    color: black;
+    position: fixed;
+    min-height: 20px;
     height: auto;
-    background-color: #f4f4f4;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    margin: 0 auto;
+    border:#424242 1px solid;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95) !important;
 }
 
-.toggle-btn {
-    font-family: Helvetica, sans-serif;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 20px;
-    width: 1000px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 0 auto 10px auto;
+.navbar-toggler {
+    border: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* remove bootstrap's default background image */
+.navbar-toggler-icon {
+    position: relative;
     display: block;
-}   
-
-.projects-links,
-.music-links,
-.news-links {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;   
-    padding: 20px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    align-items: center;
-    justify-content: center; 
-    opacity: 1;
-    max-height: 500px;
-    transition: opacity 0.4s ease, max-height 0.4s ease;
-    overflow: hidden;
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    background-image: none !important;
+    transition: background-color 0.3s ease;
 }
 
-.hidden {
-    opacity: 0;
-    max-height: 0;
-    pointer-events: none;
-    padding: 0 20px;
-    border-width: 0;
-    /* Keep display: flex for animation, hide visually */
+/* top and bottom of hamburger icon */
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    transition: transform 0.3s ease;
 }
 
-.links {
-    color: #007bff;
-    text-decoration: none;
-    margin-bottom: 10px;
-    font-style: bold;
+.navbar-toggler-icon::before {
+    transform: translateY(-9px);
+}
+
+.navbar-toggler-icon::after {
+    transform: translateY(9px);
+}
+
+/* Transform hamburger to X when menu is open */
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+    background-color: transparent !important;
+    /* Hide the middle line */
+    background-image: none !important;
+}
+
+/* Rotate top line to form the X */
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+}
+
+/* Rotate bottom line to form the X */
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+}
+
+.navbar .nav-link {
+    color: black;
+    font-size: 1.25rem;
+    margin: 0 10px;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #555;
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: right;
+    margin-top: auto;
+}
+
+.dropdown-menu {
+    --bs-dropdown-bg: rgba(255, 255, 255, 0.95);
+    --bs-dropdown-border-width: 0;
+    --bs-dropdown-border-radius: 0;
+    --bs-dropdown-inner-border-radius: 0;
+    --bs-dropdown-link-color: black;
+    --bs-dropdown-link-hover-color: black;
+    --bs-dropdown-link-hover-bg: rgba(0, 0, 0, 0.08);
+    --bs-dropdown-link-active-color: black;
+    --bs-dropdown-link-active-bg: rgba(0, 0, 0, 0.15);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+#navbarNav {
+    justify-content: right;
+}
+
+@media (min-width: 992px) {
+
+    /* make each link fill the bar's height so dropdowns start below it */
+    .navbar {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .navbar .nav-link {
+        padding-top: 0;
+        padding-bottom: 0;
+        line-height: 40px;
+    }
+
+    /* animated dropdown: always rendered, faded and slid in with .show */
+    .navbar .dropdown-menu {
+        display: block;
+        margin-top: 0;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    }
+
+    .navbar .dropdown-menu.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar .nav-link {
+        margin: 0;
+        padding: 0.75rem 1rem;
+    }
+
+    /* the navbar already provides the background, so don't double it */
+    .navbar .dropdown-menu {
+        background-color: transparent !important;
+        display: block;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        transition: max-height 0.3s ease, opacity 0.3s ease,
+            padding 0.3s ease;
+    }
+
+    .navbar .dropdown-menu.show {
+        max-height: 300px;
+        opacity: 1;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    /* hamburger menu open/close speed */
+    .navbar-collapse.collapsing {
+        transition: height 0.3s ease;
+    }
+}
+
+.news-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    max-width: 600px;
+    margin: 1rem auto;
+    border-radius: 0.5rem;
+}
+.home-h1 {
     text-align: center;
+    margin-top: 2rem;
+    color: white;
 }
+.form-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    border-radius: 0.5rem;
+}
+.resume-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    border-radius: 0.5rem;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 0.8; }
+}
+
+.fade-in {
+    animation: fade-in 0.5s ease-in;
+}
+
