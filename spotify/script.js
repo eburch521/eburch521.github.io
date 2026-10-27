@@ -1,11 +1,5 @@
 const url = 'https://spotify-statistics-and-stream-count.p.rapidapi.com/artist/6GAZhXqlPQdf3mzK6hvGM9';
-const options = {
-	method: 'GET',
-	headers: {
-		'x-rapidapi-key': '6aa5b41c0cmsha4e32e57a73b310p1bc143jsn80cafbfd4840',
-		'x-rapidapi-host': 'spotify-statistics-and-stream-count.p.rapidapi.com'
-	}
-};
+
 
 function showInfo(data) {
     console.table(data.city);
